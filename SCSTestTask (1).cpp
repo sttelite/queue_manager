@@ -10,7 +10,7 @@ Memory layout:
 8 - free head
 9 - init key
 16...143 - queue table
-144...2048 - 8 bytes blocks - 7 + 1 meta
+144...2047 - 8 bytes blocks - 7 + 1 meta
 
 Solution idea:
 Custom allocator using a bitmap for queue slots (64 max) and a free list for data blocks 
@@ -288,4 +288,5 @@ unsigned char dequeue_byte(Q* q) {
     }
 
     return result;
+
 }
